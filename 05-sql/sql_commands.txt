@@ -1,0 +1,72 @@
+--- READ
+SELECT * from Customers
+--where City='Paris' And Country='France' And PostalCode = '75002';
+where Country='France' Or Country='Norway';
+
+--- CREATE
+CREATE TABLE Persons (
+    PersonID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    Email varchar(255),
+    City varchar(255)
+);
+
+DROP TABLE Persons;
+
+INSERT INTO Persons ('FirstName', 'LastName', 'Email') 
+VALUES ('Ilon', 'Musk', 'imusk@dont.panic');
+
+--- UPDATE
+UPDATE Persons
+SET Email = 'imusk@spacex.com'
+WHERE FirstName='Ilon';
+
+--- DELETE
+DELETE FROM Persons
+WHERE Email = 'imusk@spacex.com';
+
+
+
+-- JOIN
+select t.Name, t.Milliseconds, a.Title 
+from tracks as t 
+inner join albums as a 
+on t.AlbumId = a.AlbumId 
+order by a.Title
+
+select sum(t.Milliseconds)/(1000*60) as duration_mins, a2.Title 
+from tracks t 
+inner join albums a2 
+on t.AlbumId = a2.AlbumId 
+group by a2.Title
+--order by a2.Title 
+order by  duration_mins desc
+
+select i.InvoiceId, sum(ii.UnitPrice * ii.Quantity) as sum_total, i.Total 
+from invoices i 
+join invoice_items ii 
+on i.InvoiceId = ii.InvoiceId 
+group by i.InvoiceId
+--order by sum_total 
+
+--- SQL injection
+SELECT FirstName, LastName FROM Customers WHERE FirstName="Mark; drop table customers"
+
+
+
+--- AGGREGATE
+select invoiceid, count(*), sum(UnitPrice * Quantity), sum(Quantity), max(UnitPrice), avg(UnitPrice)
+from invoice_items
+group by InvoiceId
+
+select count(distinct City)
+from customers c 
+
+select BillingCity, sum(total)
+from invoices i 
+group by BillingCity 
+order by BillingCity
+--limit 10
+
