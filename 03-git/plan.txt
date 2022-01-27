@@ -1,0 +1,60 @@
+Зачем нужны системы контроля версий.
+Что такое репозиторий: история изменения файлов в конкретном проекте
+
+создать каталог
+
+git init
+
+проверить каталог .git
+
+git log
+
+создать файл test.txt
+
+git status
+
+добавить пользователя
+
+git config --global user.email "email"
+git config --global user.email "name"
+
+git add
+
+git commit -m ""
+
+create new file
+
+git reset
+
+create project on gitlab
+
+git remote add origin
+
+git remote -v
+
+git push origin master
+
+git clone <> .
+
+git pull origin master
+
+объяснить ветки
+
+создать ветку
+git checkout -b <имя ветки>
+
+поменять ветку
+git checkout <имя ветки>
+
+
+git merge <имя ветки>
+
+# 
+git branch показать список веток у вас
+
+
+как называть ветки. Префиксы
+
+Как делать merge request`ы
+
+ДЗ

@@ -1,0 +1,43 @@
+Вспоминаем QuerySet
+    Lazy
+    Цепочка вызовов, результат или еще QuerySet или конечный результат.
+    Вспомнить основные типы запросов
+
+Показать как делать запросы с группировкой:
+list(Student.objects.all()
+   .values("first_name")
+   .annotate(average_age=Avg("age"), count=Count("first_name"))
+   .order_by("-average_age")
+   .filter(first_name__startswith="a")
+   .filter(count__gt=1))
+
+Решим задачу с фильтрами in
+Решим задачу с Q() | Q()
+Знакомство с формами и HTML
+HTML:
+    открывающие/закрывающие тэги. XHTML.
+    Значение
+    аттрибуты
+
+Сделаем для поиска студентов HTML форму
+Сделаем подстановку параметров внутрь HTML формы
+
+=====================
+
+https://www.geeksforgeeks.org/django-forms/
+Создаем функцию для создания студента
+Создаем функцию которая будет сохранять данные через POST.
+Добавляем redirect
+
+Создаем форму в виде класса.
+    class StudentCreateForm(ModelForm):
+        class Meta:
+            model = Student
+            fields = ['first_name', 'last_name', 'age']
+
+
+    form = StudentCreateForm()
+    form.as_p()
+
+    if form.is_valid():
+        form.save()

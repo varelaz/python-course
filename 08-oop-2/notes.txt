@@ -1,0 +1,33 @@
+Теория
+1. Рассказать подробно разницу между аттрибутами класса и аттрибутами инстанса. Разницу между staticmethod и classmethod.
+2. Константы в верхнем регистре
+3. Повторим наследование. 
+4. Интерфейсы в питоне.
+5. Альтернатива наследованию. Композиция и Аггрегация.
+6. Множественное наследование. MRO.
+7. Миксины
+
+Практическая часть
+1) История
+2) Chain of responsibility
+3) Декоратор с параметром с помощью классов
+4) Гибкий набор данных в модели
+5) Итераторы. Плейлист в музыке
+
+
+Django
+1) Создаем новый проект
+django-admin startproject lms .
+python manage.py startapp students
+2) Создать модель студента.
+
+class Student(models.Model):
+    first_name = models.CharField(max_length=64, null=False)
+    last_name = models.CharField(max_length=64, null=False)
+    age_name = models.IntegerField(null=True, default=20)
+
+Почему нет id?
+
+3) Добавить в settings.py приложение students
+4) python manage.py makemigrations
+python manage.py migrate

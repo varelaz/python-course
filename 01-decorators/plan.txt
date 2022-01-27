@@ -1,0 +1,4 @@
+1. Introduce and expectactions
+2. Structure of course.
+3. Operation system choose.
+4. Decorators.

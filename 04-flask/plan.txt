@@ -1,0 +1,56 @@
+Создать проект в pycharm
+Создать виртуальное окружение
+Подключить виртуальное окружение к pycharm
+Устанавливаем flask
+Создаем requirements.txt
+Создаем новый репозиторий
+Создаем .gitignore
+Коммит
+
+
+Архитектура сервер/клиент. Запрос request/ Ответ response
+Как найти сервер. Адрес. URL
+
+    procotol://domain.name:5000/path/path2/path3?param=1&param2=2#fragment
+    domain.name <-> 8.8.8.8 (IPv4)
+
+    специальное имя localhost. 127.0.0.1
+    порт
+    путь
+    параметры
+    протокол
+        правила + формат общения
+
+http протокол
+
+HTTP request:
+    GET /wiki/ HTTP/1.0
+    Host: ru.wikipedia.org
+
+HTTP response:
+    HTTP/1.0 200 OK
+
+-----------------------------------------
+Создать demo приложение flask
+
+добавить маршрут now, который отдает текущее время
+
+random string
+
+curl <url>
+
+import request
+request.args['length']
+
+debug в pycharm
+    step over, step into
+
+инспектор response.args
+
+статус коды:
+    2xx: OK
+    3xx: Redirect, not modified
+    4xx: Client error
+    5xx: Server error
+
+показать проверку данных

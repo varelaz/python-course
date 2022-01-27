@@ -1,0 +1,33 @@
+whoami
+pwd
+ls -la, ls, ls -a
+cd
+    cd .
+    cd ..
+    cd ~
+    cd -
+
+file system
+    relative/absolute path
+    proc file system
+
+mkdir
+touch 
+echo
+cat
+cp
+mv
+grep
+
+pipes
+
+python -m venv env
+pip install flask
+pip freeze 
+
+tab
+history | tail
+up/down
+ctrl+r
+
+pip freeze > requirements.txt

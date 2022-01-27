@@ -1,0 +1,33 @@
+1. Вспоминаем классы staticmethod/classmethod
+2. Вспоминаем множественное наследование
+3. Вспонинаем миграции в базе данных
+4. Создаем несколько тестовых записей в консоли
+    4.1 Устанавливаем ipython и django-extensions
+    4.2 Добавить django_extensions в settings
+    4.3 python manage.py shell_plus --print-sql
+    4.4 Создать пару записей
+    4.5 Добавить __str__
+    4.6 def generate_students
+    4.7 Установить faker
+
+5. Читаем
+    5.1 Students.objects.count()
+    5.2 Students.objects.first()
+    5.3 Students.objects.get(). help(Students.objects.get)
+        Students.objects.get(id=...)
+        Students.objects.get(first_name=...)
+        Ошибка без объектов и если > 1
+    5.4 Students.objects.filter()
+        1 условие, больше условий
+        qs = Students.objects.filter()
+        __startswith, __endswith
+
+======
+
+1. Объяснить что такое QuerySet
+qs.query.sql_with_params()
+QuerySet можно расширять
+
+2. Создать view функцию для фильтрации
+
+3. Создать фильтрацию по параметрам
