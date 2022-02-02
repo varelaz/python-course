@@ -1,0 +1,31 @@
+Исправить верстку меню
+Устанавливаем crispy-forms. https://django-crispy-forms.readthedocs.io/en/latest/install.html
+Настраиваем settings и тэг туда где используются формы
+{% load cripsy_forms_tags %}
+
+Исправить шаблоны
+Рассказать про CSRF и исправить везде.
+Рассказать про индексы.
+
+===================
+Рассказать про типы связей
+Показать админку.
+
+group = models.ForeignKey(
+    to=Group,
+    on_delete=models.CASCADE,
+    related_name='students'
+)
+Рассказать про типы on_delete
+    on_delete=SET_NULL|PROTECT|CASCADE|
+    db_constraint=True|False
+    db_index=True|False
+
+
+st = Student.objects.first()
+group = Groups.objects.first()
+
+st.group => None
+st.group = group
+st.save()
+group.students
