@@ -1,0 +1,34 @@
+Повторить связи.
+Повторить свойства FK и PK.
+модель
+    получение связанной модели
+    кэширование
+
+добавляем имя группы в список студентов
+Добавим группу каждому
+Показать пробелмы с загрузкой. select_related('group')
+Рассказать про join`ы еще раз
+Создать view для группы. Показать список студентов.
+Вынести в общий шаблон список студентов.
+    Показать {% with students= %}
+             {% endwidth %}
+         и
+            {% include '' with students=}
+
+====================
+Добавим старосту группы.
+headman = OneToOneField()
+    related_name='+'
+    related_name='headed_group'
+
+Добавим приложение lection
+Добавим ManyToManyField
+
+Рассказать про наследование таблиц.
+    Сделать родительский класс для студента Person
+
+    Сделать приложение event
+        Добавить home_work_complete_event, которое наследуется от event
+
+Рассказать про GenericForeignKey
+    https://docs.djangoproject.com/en/4.0/ref/contrib/contenttypes/
