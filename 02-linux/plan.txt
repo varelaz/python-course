@@ -23,7 +23,7 @@ pipes
 
 python -m venv env
 pip install flask
-pip freeze 
+pip freeze
 
 tab
 history | tail

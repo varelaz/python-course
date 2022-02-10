@@ -1,0 +1,20 @@
+Сделаем редактирование группы.
+Ограничим выбор старосты только студентами из группы.
+
+Сделаем абстракный класс для EditView
+
+class EditView:
+    model = Student
+    form = StudentUpdateForm
+    success_url = ...
+    template_name = ...
+
+Переопределим контекст шаблона
+
+Начинаем использовать настоящие CBV
+
+Перевести на UpdateView
+
+http://ccbv.co.uk
+
+Переходим на DeleteView и CreateView.
