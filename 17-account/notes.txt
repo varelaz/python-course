@@ -1,0 +1,27 @@
+Рассказать про ListView
+Создадим приложение accounts
+Сделаем AccountRegistrationView(CreateView)
+Сделаем форму AccountRegistrationForm(UserCreationForm)
+Посмотреть что делает UserCreationForm
+Сделать шаблон 'registration.html'
+Добавим поля в форму регистрации
+Добавим view в urls.py
+Создадим пользователя
+Посмотрим как шифруются пароля
+Сделаем AccountLoginView(LoginView)
+    success_url 
+    template_name
+
+Добавим view в urls.py
+Попробуем залогиниться
+Добавить get_redirect_url
+Попробуем залогиниться еще раз
+Показать где же пользователь в django toolbar
+Сделать logout view
+    url(r'^logout/$', LogoutView.as_view(next_page=reverse_lazy('accounts:login')), name='logout'),
+
+Сделать хэдер
+Сделать страницу редактирования профайла
+Сделать view для редактирования пользователя через UpdateView
+Получить пользователя через get_object
+settings.LOGIN_URL
