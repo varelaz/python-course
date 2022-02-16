@@ -1,0 +1,40 @@
+рассказать подробно про админскую панель
+создадим StudentAdmin(admin.ModelAdmin):
+    list_per_page = 10
+    list_display = ['first_name', 'last_name', 'email', 'age']
+    search_fields = ['first_name', 'last_name']
+    list_filter = ['group']
+
+class StudentTable(admin.TabularInline):
+    model = Student
+    fields = ['first_name', 'last_name']
+    readonly_fields = fields
+    show_change_link = True
+#    max_num = 10
+
+
+class GroupAdmin(admin.ModelAdmin):
+    inlines = [StudentTable]
+    list_select_related = ['headman']
+
+===============================================================================================
+Рассказать про IntegerChoices
+    class CourseLevel(models.IntegerChoices):
+        BASIC = 0, 'Basic'
+        NORMAL = 1, 'Normal'
+        ADVANCED = 2, 'Advanced'
+
+    level = models.IntegerField(default=CourseLevel.BASIC, choices=CourseLevel.choices)
+
+===============================================================================================
+messages фреймверк
+добавим сообщение к форме логина
+добавим отображения сообщений к основной форме
+добавим bootstrap классы
+
+===============================================================================================
+middleware
+Напоминают декораторы, но для request/response в целом
+Порядок Middleware важен
+Пишем свою middleware
+Сделаем самое простое, считать время запроса
