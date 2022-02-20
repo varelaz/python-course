@@ -1,0 +1,85 @@
+============================================================================
+Пагинация.
+Paginator
+Взять пример из django
+показать как делятся элементы по страница
+page(n)
+добавим pagination во view
+
+Добавим query_transform custom tag
+https://docs.djangoproject.com/en/4.0/howto/custom-template-tags/
+
+```
+from django import template
+
+register = template.Library()
+
+@register.simple_tag(takes_context=True)
+def query_transform(context, **kwargs):
+    query = context['request'].GET.copy()
+    for k, v in kwargs.items():
+        query[k] = v
+    return query.urlencode()
+
+<a href="?{% query_transform page=page_num.previous_page_number %}">prev</a>
+```
+Добавим стили из bootstrap.
+
+дз подключить сделать pagintion на список учителей. Использовать https://pypi.org/project/django-bootstrap-pagination/
+
+============================================================================
+Добавим модель 
+
+class Profile(models.Model):
+    user = models.OneToOneField(
+        to=User,
+        on_delete=models.CASCADE,
+        related_name="profile"
+    )
+    image = models.ImageField(null=True, default='default.jpg', upload_to='pics/', blank=True)
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
+pip install pillow
+добавим в админку
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+```
+class AccountEditView(ProcessFormView):
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        profile = request.user.profile
+
+        user_form = AccountUpdateForm(instance=user)
+        profile_form = AccountProfileUpdateForm(instance=profile)
+
+        return render(
+            request=request,
+            template_name='profile.html',
+            context={
+                'user_form': user_form,
+                'profile_form': profile_form
+            }
+        )
+
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        profile = request.user.profile
+
+        user_form = AccountUpdateForm(
+            instance=user,
+            data=self.request.POST
+        )
+        profile_form = AccountProfileUpdateForm(
+            instance=profile,
+            data=self.request.POST,
+            files=self.request.FILES
+        )
+
+```
+
+<img class="rounded-circle">

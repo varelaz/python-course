@@ -1,5 +1,6 @@
 рассказать подробно про админскую панель
-создадим StudentAdmin(admin.ModelAdmin):
+создадим 
+class StudentAdmin(admin.ModelAdmin):
     list_per_page = 10
     list_display = ['first_name', 'last_name', 'email', 'age']
     search_fields = ['first_name', 'last_name']

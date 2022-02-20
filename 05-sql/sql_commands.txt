@@ -1,7 +1,15 @@
 --- READ
+
 SELECT * from Customers
---where City='Paris' And Country='France' And PostalCode = '75002';
 where Country='France' Or Country='Norway';
+
+
+SELECT COUNT(*)
+FROM Customers
+WHERE Country = 'France'
+OR Country = 'Germany';
+
+
 
 --- CREATE
 CREATE TABLE Persons (
